@@ -1,5 +1,5 @@
 var balloon,balloonImage1,balloonImage2;
-// create database and position variable here
+// crea aquí la base de datos y la variable de posición 
 
 function preload(){
    bg =loadImage("cityImage.png");
@@ -9,7 +9,7 @@ function preload(){
    "hotairballoon2.png","hotairballoon3.png","hotairballoon3.png","hotairballoon3.png");
   }
 
-//Function to set initial environment
+//Función para configurar el entorno inicial
 function setup() {
   database=firebase.database();
   createCanvas(1500,700);
@@ -21,30 +21,30 @@ function setup() {
   textSize(20); 
 }
 
-// function to display UI
+// función para mostrar la Interfaz del Usuario (UI por sus siglas en inglés)
 function draw() {
   background(bg);
 
   if(keyDown(LEFT_ARROW)){
     balloon.addAnimation("hotAirBalloon",balloonImage2);
-    //write code to move air balloon in left direction
+    //escribe el código para mover el globo aerostático en dirección hacia la izquierda
   }
   else if(keyDown(RIGHT_ARROW)){
     balloon.addAnimation("hotAirBalloon",balloonImage2);
-    //write code to move air balloon in right direction
+    //escribe el código para mover el globo aerostático en dirección hacia la derecha
   }
   else if(keyDown(UP_ARROW)){
     balloon.addAnimation("hotAirBalloon",balloonImage2);
-    //write code to move air balloon in up direction
+    //escribe el código para mover el globo aerostático en dirección ascendente
   }
   else if(keyDown(DOWN_ARROW)){
     balloon.addAnimation("hotAirBalloon",balloonImage2);
-    //write code to move air balloon in down direction
+    //escribe el código para mover el globo aerostático en dirección descendente
   }
 
   drawSprites();
   fill(0);
   stroke("white");
   textSize(25);
-  text("**Use arrow keys to move Hot Air Balloon!",40,40);
+  text("**¡Utiliza las teclas de flecha para mover el globo aerostático!",40,40);
 }
